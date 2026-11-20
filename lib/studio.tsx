@@ -59,22 +59,22 @@ const dark = {
   light: false,
 };
 const light = {
-  bg: '#f4f3f0',
-  side: '#fbfaf7',
-  card: '#ffffff',
-  card2: '#f3f2ef',
-  input: '#f7f6f3',
-  edge: '#dddcd5',
-  text: '#222326',
-  muted: '#626269',
-  faint: '#77777c',
-  gold: '#8b6b37',
-  goldSoft: '#f0e9dc',
-  good: '#397353',
-  goodBg: '#e7f1e9',
-  danger: '#aa4944',
-  rail: '#eae9e4',
-  hover: '#eeede7',
+  bg: '#F7F7F7',
+  side: '#FFFFFF',
+  card: '#FFFFFF',
+  card2: '#FFFFFF',
+  input: '#FFFFFF',
+  edge: '#E4E4E7',
+  text: '#1D1D1D',
+  muted: '#5B5B5B',
+  faint: '#8B8B8B',
+  gold: '#F6821F',
+  goldSoft: '#FFF3E6',
+  good: '#0F7B3D',
+  goodBg: '#E9F6EE',
+  danger: '#C4342B',
+  rail: '#F2F2F2',
+  hover: '#F2F2F2',
   light: true,
 };
 export type Colors = typeof dark;
@@ -112,7 +112,7 @@ export function StudioProvider({ children }: { children: React.ReactNode }) {
   const [mode, setMode] = useState<'demo' | 'private'>('demo');
   const [exists, setExists] = useState(false);
   const [panels, setPanels] = useState<Panel[]>([]);
-  const [theme, themeSet] = useState('sombre');
+  const [theme, themeSet] = useState('clair');
   const scheme = useColorScheme();
   const [toast, setToast] = useState('');
   const timer = useRef<any>(null);
