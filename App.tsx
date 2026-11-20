@@ -1,10 +1,12 @@
 import React from 'react';
 import { ActivityIndicator, View } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 import { useFonts } from 'expo-font';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { StudioProvider } from './lib/studio';
 import StudioShell from './components/StudioShell';
+import { colors } from './lib/theme';
 
 export default function App() {
   const [loaded, error] = useFonts({
@@ -14,14 +16,17 @@ export default function App() {
     ManropeSemibold: require('./assets/fonts/Manrope-SemiBold.ttf'),
     ManropeBold: require('./assets/fonts/Manrope-Bold.ttf'),
   });
+
   if (!loaded && !error)
     return (
-      <View style={{ flex: 1, backgroundColor: '#101112', justifyContent: 'center' }}>
-        <ActivityIndicator color="#C9A76C" />
+      <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: 'center', justifyContent: 'center' }}>
+        <ActivityIndicator color={colors.accent} />
       </View>
     );
+
   return (
     <SafeAreaProvider>
+      <StatusBar style="dark" />
       <StudioProvider>
         <StudioShell />
       </StudioProvider>
